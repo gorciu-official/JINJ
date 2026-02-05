@@ -3,28 +3,28 @@
 #include <string.h>
 
 static const char* jinj_token_type_to_string_map[] = {
-    [JinjTokenTypeIdent] =    "IDENT",
-    [JinjTokenTypeString] =   "STRING",
-    [JinjTokenTypeChar] =     "CHAR",
-    [JinjTokenTypeInt] =      "INT",
-    [JinjTokenTypeFloat] =    "FLOAT",
-    [JinjTokenTypeTrueLit] =  "TRUE",
-    [JinjTokenTypeFalseLit] = "FALSE",
-    [JinjTokenTypeNilLit] =   "NIL",
+    [JinjTokenTypeIdent]    =   "IDENT",
+    [JinjTokenTypeString]   =   "STRING",
+    [JinjTokenTypeChar]     =   "CHAR",
+    [JinjTokenTypeInt]      =   "INT",
+    [JinjTokenTypeFloat]    =   "FLOAT",
+    [JinjTokenTypeTrueLit]  =   "TRUE",
+    [JinjTokenTypeFalseLit] =   "FALSE",
+    [JinjTokenTypeNilLit]   =   "NIL",
 
-    [JinjTokenTypeLParen] =   "LPAREN",
-    [JinjTokenTypeRParen] =   "RPAREN",
-    [JinjTokenTypeLBracket] = "BRACKET",
-    [JinjTokenTypeRBracket] = "BRACKET",
-    [JinjTokenTypeLBrace] =   "LBRACE",
-    [JinjTokenTypeRBrace] =   "RBRACE",
+    [JinjTokenTypeLParen]   =   "LPAREN",
+    [JinjTokenTypeRParen]   =   "RPAREN",
+    [JinjTokenTypeLBracket] =   "BRACKET",
+    [JinjTokenTypeRBracket] =   "BRACKET",
+    [JinjTokenTypeLBrace]   =   "LBRACE",
+    [JinjTokenTypeRBrace]   =   "RBRACE",
 
-    [JinjTokenTypeHash] =  "HASH",
+    [JinjTokenTypeHash]  = "HASH",
     [JinjTokenTypeComma] = "COMMA",
     [JinjTokenTypeColon] = "COLON",
     [JinjTokenTypeEqual] = "EQUAL",
 
-    [JinjTokenTypeLineComment] =   "LINE_COMMENT",
+    [JinjTokenTypeLineComment]  = "LINE_COMMENT",
     [JinjTokenTypeBlockComment] = "BLOCK_COMMENT",
 
     [JinjTokenTypeWhitespace] = "WHITESPACE",
@@ -33,7 +33,7 @@ static const char* jinj_token_type_to_string_map[] = {
 };
 
 const char* jinj_token_type_to_string(JinjTokenType tt) {
-    if (tt < 0 || tt >= sizeof(jinj_token_type_to_string_map)/sizeof(char*))
+    if (tt < 0 || tt >= (sizeof(jinj_token_type_to_string_map) / sizeof(char*)))
         return "UNKNOWN";
     const char* s = jinj_token_type_to_string_map[tt];
     return s ? s : "UNKNOWN";
