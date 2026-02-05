@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+# juamp-x detected
+
 NotExit=n
 colors=true
 
@@ -126,7 +128,7 @@ Install() {
         return $?
 
     elif command -v pacman &>/dev/null; then
-        pacman -S --noconfirm "$package" &>/dev/null
+        pacman -S --noconfirm --needed "$package" &>/dev/null
         return $?
 
     elif command -v zypper &>/dev/null; then
