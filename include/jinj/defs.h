@@ -1,13 +1,20 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#if defined(bool) || defined(_bool)
 #if defined(bool)
     typedef bool jinj_bool_t;
-#else
+#elif defined(_Bool)
     typedef _Bool jinj_bool_t;
 #endif
 #define JINJ_TRUE ((jinj_bool_t)1)
 #define JINJ_FALSE ((jinj_bool_t)0)
+#else
+typedef enum jinj_bool_t {
+    JINJ_TRUE  = 0,
+    JINJ_FALSE = 1,
+} jinj_bool_t;
+#endif
 
 typedef size_t jinj_usize_t;
 typedef uint32_t jinj_rune_t;
